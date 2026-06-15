@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up | ARBBS Services</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container inner">
+      <a class="brand" href="index.html">
+        <div class="logo"></div>
+        <div>
+          <strong>ARBBS Services</strong>
+          <small>Broadband Internet • Jamaica</small>
+        </div>
+      </a>
+      <nav class="links">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="plans.html">Packages</a>
+        <a data-nav href="signup.html">Sign Up</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="h-card">
+        <div class="kicker">NEW CUSTOMER</div>
+        <h1 style="margin:10px 0 0 0;">Sign up for internet service</h1>
+        <p style="margin-top:10px;">
+          Fill out the form below. Submissions go to Google Sheets after you paste your Apps Script Web App URL in <code>assets/app.js</code>.
+          Until then, it will automatically fall back to WhatsApp.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div class="h-card">
+          <h2 style="margin-top:0;">Customer Details</h2>
+
+          <form id="signupForm" class="form" autocomplete="on">
+            <div class="row">
+              <div>
+                <label for="fullName">Full Name *</label>
+                <input id="fullName" name="fullName" placeholder="e.g. John Brown" required />
+              </div>
+              <div>
+                <label for="phone">Phone Number *</label>
+                <input id="phone" name="phone" placeholder="e.g. 876-xxx-xxxx" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="email">Email (optional)</label>
+                <input id="email" name="email" type="email" placeholder="e.g. you@email.com" />
+              </div>
+              <div>
+                <label for="plan">Select Package *</label>
+                <select id="plan" name="plan" required>
+                  <option value="">Choose a package</option>
+                  <option>5 Mbps — JMD 3,500 / month</option>
+                  <option>10 Mbps — JMD 4,000 / month</option>
+                  <option>15 Mbps — JMD 6,000 / month</option>
+                  <option>25 Mbps — JMD 6,500 / month</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="notice">
+              Want to pay online now? Choose a package, then click <strong>Pay Online</strong>.
+            </div>
+            <div class="btns" style="margin-top:0;">
+              <a class="btn primary" id="payNowBtn" href="#" target="_blank" rel="noopener">Pay Online</a>
+            </div>
+
+            <div>
+              <label for="address">Service Address *</label>
+              <input id="address" name="address" placeholder="Community / Road / Landmark" required />
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="install">Preferred Install Time (optional)</label>
+                <input id="install" name="install" placeholder="e.g. Weekdays after 4pm" />
+              </div>
+              <div>
+                <label for="notes">Notes (optional)</label>
+                <input id="notes" name="notes" placeholder="e.g. Gate code, best time to call" />
+              </div>
+            </div>
+
+            <div class="notice">
+              By submitting, you agree that ARBBS Services may contact you to confirm coverage, pricing, and installation details.
+            </div>
+
+            <button class="btn primary" type="submit">Submit Request</button>
+            <div id="formStatus" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="h-card">
+          <h2 style="margin-top:0;">What happens next?</h2>
+          <ul>
+            <li>You submit your details</li>
+            <li>We confirm coverage at your address</li>
+            <li>We arrange installation date & time</li>
+            <li>You get connected</li>
+          </ul>
+          <hr />
+          <p class="notice">
+            If you prefer, you can contact us directly:<br/><br/>
+            <strong>Phone:</strong> 876-225-1674<br/>
+            <strong>WhatsApp:</strong> 876-225-1674<br/>
+            <strong>Email:</strong> info@arbbs.me
+          </p>
+          <div class="btns">
+            <a class="btn" href="plans.html">View Packages</a>
+            <a class="btn primary" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container" style="padding:0;">
+        <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+          <div>© <span id="y"></span> ARBBS Services.</div>
+          <div class="small-links">
+            <a href="index.html">Home</a>
+            <a href="plans.html">Packages</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    </footer>
+  </main>
+</body>
+</html>
